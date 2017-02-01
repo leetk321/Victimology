@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+    <title xml:lang="ko">현재 위치 출력</title>
+    <description xml:lang="ko">현재 메뉴 경로를 보여줍니다.</description>
+    <version>0.2.1</version>
+    <date>2007-12-29</date>
+
+    <author link="http://bnufactory.com" email_address="bnufactory@gmail.com">
+        <name xml:lang="ko">BNU</name>
+    </author>
+
+    <extra_vars>
+        <var id="partition">
+			<type>text</type>
+            <name xml:lang="ko">구분자</name>
+            <description xml:lang="ko">입력하신 문자로 메뉴 사이를 구분합니다. 특수문자 태그 사용. (기본값 : &gt;)</description>
+        </var>
+    </extra_vars>
+</widget>

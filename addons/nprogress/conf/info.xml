@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon version="0.2">
+	<title xml:lang="ko">Nprogress bar</title>
+	<description xml:lang="ko">
+		최상단에 로딩현황을 표기 해줍니다.
+	</description>
+	<version>0.1.1</version>
+	<date>2013-10-15</date>
+	<author link="http://sosifam.com">
+		<name xml:lang="ko">BJ람보</name>
+	</author>
+	
+	<extra_vars>
+	<var name="barcolor" type="text">
+		<title xml:lang="ko">바의 색깔코드</title>
+		<description xml:lang="ko">Bar의 색깔 코드를 입력하세요</description>
+	</var>
+	<var name="spincolor" type="text">
+		<title xml:lang="ko">spin 아이콘의 색깔코드</title>
+		<description xml:lang="ko">spin 아이콘의 색깔 코드를 입력하세요</description>
+	</var>
+	<var name="shadowcolora" type="text">
+		<title xml:lang="ko">그림자 컬러 1의 색깔코드</title>
+		<description xml:lang="ko">그림자 컬러 1의 색깔코드를 입력하세요 (box-shadow: 0 0 10px #@@@, 0 0 5px #!!!; 에서 @@@값)</description>
+	</var>
+	<var name="shadowcolorb" type="text">
+		<title xml:lang="ko">그림자 컬러 2의 색깔코드</title>
+		<description xml:lang="ko">그림자 컬러 2의 색깔 코드를 입력하세요 (box-shadow: 0 0 10px #@@@, 0 0 5px #!!!; 에서 !!!값)</description>
+	</var>
+	<var name="zindex" type="text">
+		<title xml:lang="ko">z-index값</title>
+		<description xml:lang="ko">레이아웃에 애드온이 묻힐경우 설정하시오. (기본 100)</description>
+	</var>
+	<var name="only_admin" type="select">
+		<title xml:lang="ko">관리자페이지에서 사용여부</title>
+		<description xml:lang="ko">사용 할 시 관리자페이지에서도 애드온이 작동합니다.</description>
+		<options value="Y">
+			<title xml:lang="ko">사용</title>
+		</options>
+		<options value="N">
+			<title xml:lang="ko">사용 안함</title>
+		</options>
+	</var>
+	</extra_vars>
+</addon>

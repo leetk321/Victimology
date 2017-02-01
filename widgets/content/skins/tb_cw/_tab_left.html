@@ -1,0 +1,20 @@
+<div class="tabbable tabs-left">
+	<ul class="nav nav-tabs widgetTabA widgetTab">
+	{@$i=0}
+	<!--@foreach($widget_info->tab as $module_srl => $tab)-->
+		<li<!--@if($i==0)--> class="active"<!--@end-->><a href="{$tab->url}" onmouseover="content_widget_tab_show(jQuery(this),jQuery(this).parents('ul.widgetTabA').next('div.tab-content'),{$i})" style="cursor:pointer">{$tab->title}</a></li>
+	{@$i++}
+	<!--@end-->
+	</ul>
+
+	<div class="tab-content">
+		{@$i=0}
+		<!--@foreach($widget_info->tab as $module_srl => $tab)-->
+			<div class="tab-pane<!--@if($i==0)--> active<!--@end-->">
+				{@$widget_info->content_items = $tab->content_items}
+				<!--#include("_tab_none.html")-->
+			</div>
+		{@$i++}
+		<!--@end-->
+	</div>
+</div>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+	<title xml:lang="ko">XE 1.7 관리자 로긴바 제거 애드온</title>
+	<description xml:lang="ko">XE 1.7 부터 관리자 로그인시 뜨는 관리자 로긴바 제거를 쉽게 해주는 애드온입니다.</description>
+	<license link="http://creativecommons.org/licenses/by-sa/2.0/kr/" xml:lang="ko">Creative Commons License 저작자표시-동일조건변경허락 2.0 대한민국</license>
+	<version>1.1</version>
+	<date>2013-02-24</date>
+	<link>http://www.koriup.com/</link>
+	<author email_address="oez6474@koriup.com" link="http://www.koriup.com/">
+		<name xml:lang="ko">안태룡(OEZ)</name>
+	</author>
+	<extra_vars>
+		<group>
+			<title xml:lang="ko">상태바 애드온 설정
+			</title>
+			<var name="status" type="select">
+				<title xml:lang="ko">사용설정</title>
+				<options value="Y">
+					<title xml:lang="ko">사용함(기본값)</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<description xml:lang="ko">사용안함으로 설정시 표시되지 않습니다. (기본값:사용함)</description>
+				</var>
+		</group>
+	</extra_vars>
+</addon>

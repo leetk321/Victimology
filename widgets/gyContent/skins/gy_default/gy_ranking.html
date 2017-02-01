@@ -1,0 +1,45 @@
+{@ $widget_info->rangking_name = 'gyContentRanking_'.rand(100000,500000).rand(100000,500000);}
+<!--@if($widget_info->load_easing == 'Y')-->
+<load target="./js/jquery.easing.1.3.min.js" />
+<!--@end-->
+<load target="./js/jquery.gyContentRanking.js" />
+<div id="{$widget_info->rangking_name}" class="gyContentRanking">
+	<h2 class="rankHeader" style="background: #{$widget_info->ranking_header_bg_color}; color: #{$widget_info->ranking_header_text_color}">{$widget_info->ranking_header_text}</h2>
+	<ul class="rankList" style="background: #{$widget_info->default_bg_color};">
+		{@$_idx=0}
+		<!--@foreach($widget_info->content_items as $key => $item)-->
+		<!--@if($widget_info->order_target == 'readed_count')-->
+		{@ $_order_count = $item->getReadedCount()}
+		<!--@else-->
+		{@ $_order_count = $item->getVotedCount()}
+		<!--@end-->
+		<li><a href="{$item->getLink()}" title="{$widget_info->arr_text[$i]}" target="_blank"|cond="$widget_info->new_window"><span class="rank_num" style="background: #{$widget_info->rank_bg_color};color: #{$widget_info->rank_text_color}; border: 1px solid #{$widget_info->rank_border_color};">{$_idx+1}</span><span class="rank_text" style="color: #{$widget_info->title_text_color};">{$item->getTitle($widget_info->subject_cut_size)}</span><span class="rank_fluc" style="color: #{$widget_info->fluc_text_color};">{$_order_count}</span></a></li>
+		{@$_idx++}
+	    <!--@end-->
+	</ul>
+	<div class="rankBottom" style="background: #{$widget_info->ranking_footer_bg_color}; color: #{$widget_info->ranking_footer_text_color}">{zdate($widget_info->start_date, 'Y-m-d')} ~ {zdate($widget_info->end_date, 'Y-m-d')}</div>
+</div>
+<script type="text/javascript">
+(function($){
+	$(document).ready(function() {
+		$("#{$widget_info->rangking_name}").gyContentRanking({
+			ranking_width : '{$widget_info->ranking_width}',
+			display_item_count : '{$widget_info->list_count}',
+			effect_num : '{$widget_info->effect_num}',
+			use_effect : '{$widget_info->use_effect}',
+			default_bg_color : '{$widget_info->default_bg_color}',
+			rolling_bg_color 	: '{$widget_info->rolling_bg_color}',
+			rolling_text_color 	: '{$widget_info->rolling_text_color}',
+			rank_border_color 	: '{$widget_info->rank_border_color}',
+			rank_bg_color 	: '{$widget_info->rank_bg_color}',
+			rank_text_color 	: '{$widget_info->rank_text_color}',
+			title_text_color 	: '{$widget_info->title_text_color}',
+			fluc_text_color 	: '{$widget_info->fluc_text_color}',
+			max_loop_count : '{$widget_info->max_loop_count}',
+			item_rolling_interval	: '{$widget_info->item_rolling_interval}',
+			next_rolling_interval	: '{$widget_info->next_rolling_interval}',
+			restart_interval : '{$widget_info->restart_interval}'
+		});
+	});
+})(jQuery);
+</script>

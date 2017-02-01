@@ -1,0 +1,14 @@
+<load target="./js/tb_cw_tab.js" cond="$widget_info->page_count || count($widget_info->tab)" />
+<load target="./css/tb_cw.css" />
+{@
+	if($colorset=='condensed') $tb_cw_condensed = true;
+}
+<div class="tb-cw-wrap muted">
+    <!--@if($widget_info->tab_type  == "tab_left")-->
+        <!--#include("./_tab_left.html")-->
+    <!--@elseif($widget_info->tab_type == "tab_top")-->
+        <!--#include("./_tab_top.html")-->
+    <!--@else-->
+        <!--#include("./_tab_none.html")-->
+    <!--@end-->
+</div>

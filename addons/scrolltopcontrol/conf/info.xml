@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon version="0.2">
+	<title xml:lang="ko">scrolltopcontrol</title>
+	<description xml:lang="ko">
+		스무스하게 하면을 최상단으로 이동 시키줍니다.
+	</description>
+	<version>1.1.0</version>
+	<date>2013-04-05</date>
+	<author link="http://sulli.wo.tc">
+		<name xml:lang="ko">Sulli</name>
+	</author>
+	
+	<extra_vars>
+	<var name="startline" type="text">
+		<title xml:lang="ko">시작 라인</title>
+		<description xml:lang="ko">탑버튼이 표시되는 라인 입니다. (기본 : 100)</description>
+	</var>
+	<var name="scrollduration" type="text">
+		<title xml:lang="ko">스크롤 시간</title>
+		<description xml:lang="ko">스크롤이 올라가는 시간입니다. (기본 : 1000)
+			시간이 낮을수록 빠르게 올라갑니다.
+		</description>
+	</var>
+	</extra_vars>
+</addon>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin version="0.2">
+	<title xml:lang="ko">기본</title>
+	<description xml:lang="ko">기본 스킨입니다.</description>
+	<version>0.2.1</version>
+	<date>2007-12-29</date>
+	<link>http://bnufactory.com</link>
+
+	<author email_address="bnufactory@gmail.com" link="http://bnufactory.com">
+		<name xml:lang="ko">BNU</name>
+	</author>
+
+	<colorset>
+		<color name="normal">
+		<title xml:lang="ko">기본 색상</title>
+		</color>
+	</colorset>
+</skin>
