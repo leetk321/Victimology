@@ -1,0 +1,44 @@
+<!--@if($widget_info->content_items)-->
+{@ $widget_info->accordion_name = 'gyAccordion_'.rand(100000,500000).rand(100000,500000)}
+<load target="./js/jquery.gyContentAccordion.js" />
+<div id="{$widget_info->accordion_name}" class="gyContentAccordion" style="width:{$widget_info->ac_width}px;">
+	<ul>
+		<!--@foreach($widget_info->content_items as $key => $item)-->
+			<li>
+				<a href="#" onclick="return false" class="ac_header" style="width: {($widget_info->ac_width-30)}px;"><!--@if($widget_info->show_category=='Y' && $item->get('category_srl') )--><strong class="category">{$item->getCategory()}</strong><!--@end--> {$item->getTitle($widget_info->subject_cut_size)}</a>
+				<div class="ac_content" style="width: {($widget_info->ac_width-20)}px; height: 54px;">
+				<!--@foreach($widget_info->option_view_arr as $k => $v)-->
+						<!--@if($v=='content')-->
+							<a href="{$item->getLink()}">{$item->getContent()}</a>
+						<!--@else if($v=='nickname')-->
+							<a <!--@if($item->getMemberSrl())-->href="#" onclick="return false;" class="author member_{$item->getMemberSrl()}"<!--@elseif($item->getAuthorSite())-->href="{$item->getAuthorSite()}" onclick="window.open(this.href); return false;" class="author member"<!--@else-->href="#" onclick="return false;" class="author member"<!--@end--> >{$item->getNickName()}</a>
+						<!--@else if($v=='regdate')-->
+							<span class="date">{$item->getRegdate("Y-m-d")}</span> <span class="hour">{$item->getRegdate("H:i")}</span>
+						<!--@end-->
+				<!--@end-->
+				</div>
+			</li>
+		<!--@end-->
+	 </ul>
+</div>
+<script type="text/javascript">
+(function($){
+	$(document).ready(function(){
+		$('#{$widget_info->accordion_name}').gyContentAccordion({
+			'mouse_event' : '{$widget_info->ac_mouse_event}',
+			'slide_type' : '{$widget_info->ac_slide_type}',
+			'auto_slide' : '{$widget_info->ac_auto_slide}',
+			'speed' : '{$widget_info->ac_speed}',
+			'timeout' : '{$widget_info->ac_timeout}',
+			'header_bg_color' : '{$widget_info->ac_title_bg_color}',
+			'header_text_color' : '{$widget_info->ac_title_text_color}',
+			'content_bg_color' : '{$widget_info->ac_summary_bg_color}',
+			'content_text_color' : '{$widget_info->ac_summary_text_color}',
+			'border_color' : '{$widget_info->ac_border_color}'
+		});
+	});
+})(jQuery);
+</script>
+<!--@else-->
+&nbsp;
+<!--@end-->

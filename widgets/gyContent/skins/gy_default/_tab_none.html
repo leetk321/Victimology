@@ -1,0 +1,15 @@
+<!--@if($widget_info->list_type == "ranking")-->
+    <!--#include("./gy_ranking.html")-->
+<!--@elseif($widget_info->list_type == "blind_gallery")-->
+    <!--#include("./gy_blind_gallery.html")-->
+<!--@elseif($widget_info->list_type == "rotation_gallery")-->
+    <!--#include("./gy_rotation_gallery.html")-->
+<!--@elseif($widget_info->list_type == "webzine")-->
+    <!--#include("./gy_webzine.html")-->
+<!--@elseif($widget_info->list_type == "image_title")-->
+    <!--#include("./gy_image_title.html")-->
+<!--@elseif($widget_info->list_type == "accordion")-->
+    <!--#include("./gy_accordion.html")-->
+<!--@else-->
+    <!--#include("./gy_normal.html")-->
+<!--@end-->

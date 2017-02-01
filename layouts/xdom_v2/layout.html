@@ -1,0 +1,20 @@
+<!--// js File import -->
+<!--%import("js/layout.js")-->
+
+<!--// layout File include -->
+<!--@if($layout_info->layout_style == "da")-->
+<!--#include("layout_da.html")-->
+<!--@elseif($layout_info->layout_style == "na")-->
+<!--#include("layout_na.html")-->
+<!--@elseif($layout_info->layout_style == "co")-->
+<!--#include("layout_co.html")-->
+<!--@elseif($layout_info->layout_style == "xe")-->
+<!--#include("layout_xe.html")-->
+<!--@elseif($layout_info->layout_style == "bg")-->
+<!--#include("layout_bg.html")-->
+<!--@else-->
+<!--#include("layout_xd.html")-->
+<!--@end-->
+<!--@if(!$layout_info->layout_style)-->
+{@$layout_info->layout_style = "xd"}
+<!--@end-->

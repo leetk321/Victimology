@@ -1,0 +1,62 @@
+<!--// 목록형 출력 무시하고, 테이블형 출력 -->
+<table class="table table-hover table-striped<!--@if($tb_cw_condensed==true)--> table-condensed<!--@end--> tb-cw">
+	<thead cond="$colorset='no_thead'">
+		{@$_idx=0}
+		<tr<!--@if($_idx >= $widget_info->list_count)--> style="display:none"<!--@end-->>
+			<!--@foreach($widget_info->option_view_arr as $k => $v)-->
+				<!--@if($v=='title')-->
+					<th>{$lang->title}</th>
+					<!--@else if($v=='nickname')-->
+						<th>{$lang->nick_name}</th>
+					<!--@else if($v=='regdate')-->
+						<th>{$lang->regdate}</th>
+					<!--@end-->
+			<!--@end-->
+		</tr>
+	</thead>
+	<tbody>
+		{@$_idx=0}
+		<!--@foreach($widget_info->content_items as $key => $item)-->
+			<tr<!--@if($_idx >= $widget_info->list_count)--> style="display:none"<!--@end-->>
+		<!--@foreach($widget_info->option_view_arr as $k => $v)-->
+		<!--@if($v=='title')-->
+			<td class="title">
+				<!--@if($widget_info->show_browser_title=='Y' && $item->getBrowserTitle())-->
+					<span class="browser_title"><a href="<!--@if($item->contents_link)-->{$item->contents_link}<!--@else-->{getSiteUrl($item->domain, '', 'mid', $item->get('mid'))}<!--@end-->">{$item->getBrowserTitle()}</a> <i class="icon-angle-right"></i></span>
+				<!--@end-->
+				<!--@if($widget_info->show_category=='Y' && $item->get('category_srl') )-->
+					<span class="category"><a href="{getSiteUrl($item->domain,'','mid',$item->get('mid'),'category',$item->get('category_srl'))}">{$item->getCategory()}</a> <i class="icon-angle-right"></i></span>
+				<!--@end-->
+				
+				<a href="{$item->getLink()}" class="title" target="_blank"|cond="$widget_info->new_window">{$item->getTitle($widget_info->subject_cut_size)}</a>
+				
+				<!--@if($widget_info->show_comment_count=='Y' && $item->getCommentCount())-->
+					<a href="{$item->getLink()}#comment" class="replyNum tooltip-top" title="<i class='icon-comments'></i> {$lang->comment}">{$item->getCommentCount()}</a>
+				<!--@end-->
+		
+				<!--@if($widget_info->show_trackback_count=='Y' && $item->getTrackbackCount())-->
+					<a href="{$item->getLink()}#trackback" class="trackbackNum tooltip-top" title="{$lang->trackback}">{$item->getTrackbackCount()}</a>
+				<!--@end-->
+				<!--@if($widget_info->show_icon=='Y')-->
+					<span class="icon">{$item->printExtraImages()}</span>
+				<!--@end-->
+			</td>
+		<!--@else if($v=='nickname')-->
+			<td class="nick_name hidden-phone"><a <!--@if($item->getMemberSrl())-->href="#" onclick="return false;" class="author member_{$item->getMemberSrl()}"<!--@elseif($item->getAuthorSite())-->href="{$item->getAuthorSite()}" onclick="window.open(this.href); return false;" class="author member"<!--@else-->href="#" onclick="return false;" class="author member"<!--@end--> >{$item->getNickName()}</a></td>
+		<!--@else if($v=='regdate')-->
+			<td class="time hidden-phone"><span class="date">{$item->getRegdate("Y-m-d")}</span> <span class="hour">{$item->getRegdate("H:i")}</span></td>
+		<!--@end-->
+		<!--@end-->
+			</tr>
+		{@$_idx++}
+		<!--@end-->
+	</tbody>
+</table>
+
+<!--@if($widget_info->page_count > 1 && $widget_info->list_count<$_idx)-->
+	<ul class="tb-cw-pager pager">
+	    <li><a href="#" title="{$lang->cmd_prev}" onclick="content_widget_prev(jQuery(this).parents('ul.tb-cw-pager').prev('table.tb-cw'),{$widget_info->list_count});return false">&larr; {$lang->cmd_prev}</a></li>
+		<li><a href="#" class="next" title="{$lang->cmd_next}" onclick="content_widget_next(jQuery(this).parents('ul.tb-cw-pager').prev('table.tb-cw'),{$widget_info->list_count});return false">{$lang->cmd_next} &rarr;</a></li>
+		</li>
+	</ul>
+<!--@end-->

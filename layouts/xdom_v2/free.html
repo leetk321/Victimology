@@ -1,0 +1,65 @@
+<style type="text/css">
+<!--@if($layout_info->free_font_color)-->
+a:hover { color:{$layout_info->free_font_color}; text-decoration:underline; }
+<!--@if($layout_info->layout_style == "xd")-->
+#loginW { border:2px solid {$layout_info->free_font_color}; }
+<!--@end-->
+<!--@if($layout_info->layout_style == "da" || "na" || "co")-->
+.wideLW { border-top:7px solid {$layout_info->free_font_color}; border-bottom:2px solid {$layout_info->free_font_color}; }
+.wideLW #loginW { border-top:2px solid {$layout_info->free_font_color}; }
+<!--@end-->
+.gnb2 li a:hover, .gnb2 li a:focus { color:{$layout_info->free_font_color} !important; }
+.gnb2 li.on a { border-bottom:0px solid {$layout_info->free_font_color}; color:{$layout_info->free_font_color} !important; }
+.roll_gnbSub li a:hover, .roll_gnb li a:focus { color:{$layout_info->free_font_color} !important; }
+.roll_gnbSub li.on a { border-bottom:0px solid {$layout_info->free_font_color}; color:{$layout_info->free_font_color} !important; }
+#drop_gnb .ul2 { border-bottom:1px solid {$layout_info->free_font_color}; }
+#drop_gnb .ul2 li { border:1px solid {$layout_info->free_font_color}; border-bottom:0; }
+#drop_gnb .ul2 a:hover, #drop_gnb .ul2 a:focus { color:#fff; background-color:{$layout_info->free_font_color}; }
+#drop_gnb .on4 .a4 { background-color:{$layout_info->free_font_color}; }
+#drop_gnb .ul2 ul { border-bottom:1px solid {$layout_info->free_font_color}; }
+#drop_gnb .on2 .a2, #drop_gnb .on3 .a3, #drop_gnb .on4 .a4 { color:#fff; background-color:{$layout_info->free_font_color}; }
+.Search { border: 5px solid {$layout_info->free_font_color} !important; }
+.iSearch { border: 4px solid {$layout_info->free_font_color} !important; }
+<!--@if($layout_info->layout_style == "xd" || $layout_info->layout_style == "xe")-->
+.ggSearch { border: 1px solid {$layout_info->free_font_color} !important; }
+.xSearch { border: 1px solid {$layout_info->free_font_color} !important; }
+<!--@else-->
+.ggSearch { border: 2px solid {$layout_info->free_font_color} !important; }
+.xSearch { border: 2px solid {$layout_info->free_font_color} !important; }
+<!--@end-->
+.lnbWrap .subtitle { padding:10px 0; border-bottom:2px solid {$layout_info->free_font_color}; }
+.lnb li a:hover, .lnb li a:focus { color:{$layout_info->free_font_color}; }
+.lnb li.on a { color:{$layout_info->free_font_color}; }
+.lnb li ul li a:hover, .lnb li ul li a:focus { color:{$layout_info->free_font_color}; }
+.lnb li.on ul li a:hover, .lnb li ul li a:focus { color:{$layout_info->free_font_color}; }
+.lnb li.on ul li.on a { color:{$layout_info->free_font_color}; }
+<!--@end-->
+
+<!--@if($layout_info->free_bgMenu)-->
+div.bg { background:url({$layout_info->free_bgMenu}) repeat-x;}
+.main_menu { background:url({$layout_info->free_bgMenu}) repeat-x left top; }
+.main_menu .gnb li a, .main_menu .gnb li a:hover, .main_menu .gnb li a:focus, .main_menu .gnb li a:visited, .main_menu .gnb li.on a, .main_menu .roll_gnb li a, .main_menu .roll_gnb li.selected a, .main_menu .roll_gnb li a:hover, .main_menu .roll_gnb li a:focus, .main_menu .roll_gnb li a:visited, .main_menu .roll_gnb li.on a, #drop_gnb .a1, #drop_gnb .a1:hover, #drop_gnb .on1 .a1 { color:#fff }
+<!--@end-->
+
+<!--@if($layout_info->layout_type == "main")-->
+div.bg { background-position:center 107px; }
+<!--@else-->
+div.bg { background-position:center 70px; }
+<!--@end-->
+
+<!--@if($layout_info->free_bgMenuOn)-->
+.main_menu .gnb li.on { background:url({$layout_info->free_bgMenuOn}) no-repeat left top }
+.main_menu .roll_gnb li.selected { background:url({$layout_info->free_bgMenuOn}) no-repeat left top; }
+.main_menu .roll_gnb li.on:hover { background:url({$layout_info->free_bgMenuOn}) no-repeat left top; _background:url({$layout_info->free_bgMenuOnR}) no-repeat right top; }
+#drop_gnb .on1 { background:url({$layout_info->free_bgMenuOn}) no-repeat left top; }
+#drop_gnb .li1:hover { background:url({$layout_info->free_bgMenuOn}) no-repeat left top; _background:url({$layout_info->free_bgMenuOnR}) no-repeat right top;}
+<!--@end-->
+<!--@if($layout_info->free_bgMenuOnR)-->
+.main_menu .gnb li.on a { background:url({$layout_info->free_bgMenuOnR}) no-repeat right top; }
+.main_menu .roll_gnb li.selected a { background:url({$layout_info->free_bgMenuOnR}) no-repeat right top; }
+.main_menu .roll_gnb li.on a:hover { background:url({$layout_info->free_bgMenuOnR}) no-repeat right top; _background:url({$layout_info->free_bgMenuOn}) no-repeat left top;}
+#drop_gnb .on1 .selectedR { background:url({$layout_info->free_bgMenuOnR}) no-repeat right top; }
+#drop_gnb .a1:hover { background:url({$layout_info->free_bgMenuOnR}) no-repeat right top; _background:url({$layout_info->free_bgMenuOn}) no-repeat left top;} 
+#drop_gnb .on1 .a1 { background:url({$layout_info->free_bgMenuOnR}) no-repeat right top; }
+<!--@end-->
+</style>

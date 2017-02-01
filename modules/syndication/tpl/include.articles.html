@@ -1,0 +1,13 @@
+	<entry>
+		<id>{$article->alternative_href}</id>
+		<title>{htmlspecialchars($article->title)}</title>
+		<author>
+			<name>{htmlspecialchars($article->nick_name)}</name>
+		</author>
+		<updated>{$article->updated}</updated>
+		<published>{date('Y-m-d\TH:i:s',ztime($article->regdate)).$time_zone}</published>
+		<link rel="via" href="{$article->channel_alternative_href}"/>
+		<content type="html">{htmlspecialchars($article->content)}</content>
+		<summary/>
+		<category/>
+	</entry>

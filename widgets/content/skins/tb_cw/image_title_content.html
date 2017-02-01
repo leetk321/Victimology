@@ -1,0 +1,39 @@
+<ul class="tb_widgetImageA thumbnails">
+{@$_idx=0}
+<!--@foreach($widget_info->content_items as $key => $item)-->
+    <li style="width:{$widget_info->thumbnail_width}px;<!--@if($_idx >= $widget_info->list_count)-->display:none<!--@end-->" class="span3 thumbnail">
+        <p class="thumbArea" style="width:{$widget_info->thumbnail_width}px;">
+            <a href="{$item->getLink()}" class="thumb detail_pop" style="width:{$widget_info->thumbnail_width}px;height:{$widget_info->thumbnail_height}px" title="<!--@if($widget_info->show_browser_title=='Y' && $item->getBrowserTitle())-->{$item->getBrowserTitle()} &rsaquo; <!--@end--><!--@if($widget_info->show_category=='Y' && $item->get('category_srl') )-->{$item->getCategory()} &rsaquo; <!--@end-->{htmlspecialchars($item->getTitle($widget_info->subject_cut_size))}" data-content='{$item->getContent()}'>
+                <!--@if($item->getThumbnail())-->
+                    <img src="{$item->getThumbnail()}" style="width:{$widget_info->thumbnail_width}px;height:{$widget_info->thumbnail_height}px" />
+                <!--@else-->
+					<span style="width:{$widget_info->thumbnail_width}px;height:{$widget_info->thumbnail_height}px;line-height:{$widget_info->thumbnail_height}px" class="none_image">{$lang->none_image}</span>
+                <!--@end-->
+            </a>
+        </p>
+		<div class="caption">
+			<!--@for($j=0,$c=count($widget_info->option_view_arr);$j<$c;$j++)-->
+				<!--@if($widget_info->option_view_arr[$j]=='title')-->
+				<h5>{$item->getTitle($widget_info->subject_cut_size)}</h5>
+				<!--@else if($widget_info->option_view_arr[$j]=='content')-->
+				<p>
+					{$item->getContent()}
+					<!--@if($widget_info->option_view_arr[$j+1]=='regdate')-->
+						<span class="date">{$item->getRegdate("Y-m-d")}</span> <span class="hour">{$item->getRegdate("H:i")}</span>
+					<!--@end-->
+				</p>
+				<!--@end-->
+			<!--@end-->
+		</div>
+	</li>
+{@$_idx++}
+<!--@end-->
+</ul>
+
+<!--@if($widget_info->page_count > 1 && $widget_info->list_count<$_idx)-->
+<ul class="contentWidgetNavigator pager">
+    <li><a href="#" title="{$lang->cmd_prev}" onclick="content_widget_prev(jQuery(this).parents('ul.contentWidgetNavigator').prev('ul.widgetImageA'),{$widget_info->list_count});return false">&larr; {$lang->cmd_prev}</a></li>
+	<li><a href="#" class="next" title="{$lang->cmd_next}" onclick="content_widget_next(jQuery(this).parents('ul.contentWidgetNavigator').prev('ul.widgetImageA'),{$widget_info->list_count});return false">{$lang->cmd_next} &rarr;</a></li>
+	</li>
+</ul>
+<!--@end-->

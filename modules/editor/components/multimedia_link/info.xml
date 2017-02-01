@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component version="0.2">
+    <title xml:lang="ko">멀티미디어 링크 개조</title>
+    <description xml:lang="ko">에디터에 wmv,avi,flv등의 멀티미디어 자료를 추가하거나 속성을 수정할 수 있습니다.</description>
+    <version>1.2.0</version>
+    <date>2014-02-20</date>
+
+    <author email_address="gorhkd0612@gmail.com" link="">
+        <name xml:lang="ko">NAVER</name>
+    </author>
+</component>

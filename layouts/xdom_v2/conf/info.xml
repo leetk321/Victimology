@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.2">
+	<title xml:lang="ko">xdom 2.5.2.4F</title>
+	<description xml:lang="ko">
+        엑스돔 레이아웃 v2 공개용 버전입니다.
+        6개의 레이아웃이 하나로 융합된 멀티 레이아웃입니다.
+        엑스돔 스타일, 다음 스타일, 네이버 스타일, 회사소개 스타일, XE 스타일, 배경이미지 스타일
+	</description>
+	<version>2.5.2.4</version>
+	<date>2011-12-31</date>
+	<link>http://xdomplus.com</link>
+
+	<author email_address="amosinfo@sbcglobal.net" link="http://xdomplus.com">
+		<name xml:lang="ko">ⓒcopyright by xdomplus</name>
+	</author>
+
+	<extra_vars>
+		<var name="layout_style" type="select">
+			<title xml:lang="ko">0. 레이아웃 스타일</title>
+			<description xml:lang="ko">원하시는 레이아웃 스타일을 선택해 주세요.</description>
+			<options value="xd">
+				<title xml:lang="ko">엑스돔 스타일 (기본)</title>
+			</options>
+			<options value="da">
+				<title xml:lang="ko">다음 스타일</title>
+			</options>
+			<options value="na">
+				<title xml:lang="ko">네이버 스타일</title>
+			</options>
+			<options value="xe">
+				<title xml:lang="ko">XE 스타일</title>
+			</options>
+			<options value="co">
+				<title xml:lang="ko">회사소개 스타일</title>
+			</options>
+			<options value="bg">
+				<title xml:lang="ko">배경이미지 스타일</title>
+			</options>
+		</var>
+		<var name="x_layout_type" type="select">
+			<title xml:lang="ko">1_1. 레이아웃 형태</title>
+			<description xml:lang="ko">원하시는 레이아웃 형태를 선택해 주세요.</description>
+			<options value="main">
+				<title xml:lang="ko">메인용 ...[상단+(본문+좌/우측)+하단]</title>
+			</options>
+			<options value="1">
+				<title xml:lang="ko">1단 .......[상단+본문+하단]</title>
+			</options>
+			<options value="2">
+				<title xml:lang="ko">2단-우 ...[상단+(본문+우측200)+하단]</title>
+			</options>
+			<options value="2d">
+				<title xml:lang="ko">2단-좌 ...[상단+(좌측200+본문)+하단]</title>
+			</options>
+			<options value="2a">
+				<title xml:lang="ko">2단-A ...[상단+(본문+우측250)+하단]</title>
+			</options>
+			<options value="2b">
+				<title xml:lang="ko">2단-B ...[상단+(본문+우측350)+하단]</title>
+			</options>
+			<options value="2c">
+				<title xml:lang="ko">2단-C ...[상단+(좌측120+본문)+하단]</title>
+			</options>
+			<options value="3">
+				<title xml:lang="ko">3단 ......[상단+(좌측120+본문+우측250)+하단]</title>
+			</options>
+			<options value="3a">
+				<title xml:lang="ko">3단-A ...[상단+(좌측150+본문+우측200)+하단]</title>
+			</options>
+			<options value="3b">
+				<title xml:lang="ko">3단-B ...[상단+(좌측100+본문+우측280)+하단]</title>
+			</options>
+			<options value="search">
+				<title xml:lang="ko">검색용 ...[상단+(본문+우측175)+하단]</title>
+			</options>
+		</var>
+		<var name="colorset" type="select">
+			<title xml:lang="ko">1_2. 컬러셋</title>
+			<description xml:lang="ko">원하시는 색상을 선택해 주세요.</description>
+			<options value="default">
+				<title xml:lang="ko">파란색 (기본)</title>
+			</options>
+			<options value="green">
+				<title xml:lang="ko">녹색</title>
+			</options>
+			<options value="orange">
+				<title xml:lang="ko">오렌지색</title>
+			</options>
+			<options value="cyan">
+				<title xml:lang="ko">청록색</title>
+			</options>
+			<options value="red">
+				<title xml:lang="ko">빨간색</title>
+			</options>
+			<options value="black">
+				<title xml:lang="ko">검정색</title>
+			</options>
+			<options value="free">
+				<title xml:lang="ko">자유색상</title>
+			</options>
+		</var>
+		<var name="free_bgMenu" type="image">
+			<title xml:lang="ko"> └─ 자유색상 메인 메뉴바</title>
+			<description xml:lang="ko">자유색상 메인 메뉴바 배경 이미지를 등록해 주세요. 자유색상을 선택했을 경우에만 적용됩니다. 이미지 크기 : 가로는 2px 이상이면 됩니다. 통으로 제작할 경우에는 메인용은 880px, 나머지는 980px입니다. 세로는 1차 메뉴 부분 36px, 2차 메뉴 부분 33px 합해서 69px입니다. 1차 메뉴 부분인 36px 크기로만 제작해도 됩니다.</description>
+		</var>
+		<var name="free_bgMenuOn" type="image">
+			<title xml:lang="ko"> └─ 자유색상 메뉴 On 왼쪽</title>
+			<description xml:lang="ko">자유색상 메뉴 On 왼쪽 배경 이미지를 등록해 주세요. 자유색상을 선택했을 경우에만 적용됩니다. 이미지 크기 : 가로 200px, 세로 35px . 둥근 형태로 제작하는 경우에는 배경을 투명하게 처리해서 gif 형식으로 저장하세요.</description>
+		</var>
+		<var name="free_bgMenuOnR" type="image">
+			<title xml:lang="ko"> └─ 자유색상 메뉴 On 오른쪽</title>
+			<description xml:lang="ko">자유색상 메뉴 On 오른쪽 배경 이미지를 등록해 주세요. 자유색상을 선택했을 경우에만 적용됩니다. 이미지 크기 : 가로 10px, 세로 35px . 둥근 형태로 제작하는 경우에는 오른쪽 부분만 작업을 하시고, 배경을 투명하게 처리해서 gif 형식으로 저장하세요. 라운드 부분은 반드시 메인 메뉴바 이미지로 배경 처리해야 둥근 형태가 유지됩니다.</description>
+		</var>
+		<var name="free_font_color" type="text">
+			<title xml:lang="ko"> └─ 자유색상 글자색</title>
+			<description xml:lang="ko">자유색상 글자색과 테두리색 설정. 자유색상 메인 메뉴바 배경 이미지와 어울리는 글자색과 테두리색의 rgb 색상코드를 입력하세요. 자유색상을 선택했을 경우에만 적용됩니다. &lt;a href="javascript:void(window.open('colortable.html','','width=600,height=400,scrollbars=yes'))"&gt;색상코드표확인&lt;/a&gt; (예. #ffcc66 )</description>
+		</var>
+		<var name="main_menu_type" type="select">
+			<title xml:lang="ko">2_1. 메인 메뉴 방식</title>
+			<description xml:lang="ko">원하시는 메인 메뉴 방식을 선택해 주세요. '롤오버 메뉴 1'은 2차 메뉴가 왼쪽 정렬되어서 출력되고, '롤오버 메뉴 2'는 2차 메뉴가 1차 메뉴에 따라가면서 출력됩니다.</description>
+			<options value="1">
+				<title xml:lang="ko">기본 메뉴 (기본)</title>
+			</options>
+			<options value="2">
+				<title xml:lang="ko">롤오버 메뉴 1</title>
+			</options>
+			<options value="3">
+				<title xml:lang="ko">롤오버 메뉴 2</title>
+			</options>
+			<options value="4">
+				<title xml:lang="ko">드롭다운 메뉴</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">사용 안함</title>
+			</options>
+		</var>
+		<var name="main_menu_font" type="text">
+			<title xml:lang="ko"> └─ 폰트 변경</title>
+			<description xml:lang="ko">메인 메뉴에 사용할 폰트를 입력하세요. 입력하지 않으면 기본 폰트가 적용됩니다. 예) NanumGothic</description>
+		</var>
+		<var name="main_menu_font_color" type="text">
+			<title xml:lang="ko"> └─ 폰트 색상</title>
+			<description xml:lang="ko">메인 1차 메뉴 폰트 색상 설정. 원하는 글자색의 rgb 색상코드를 입력하세요. 입력하지 않으면 기본 글자색이 적용됩니다. &lt;a href="javascript:void(window.open('colortable.html','','width=600,height=400,scrollbars=yes'))"&gt;색상코드표확인&lt;/a&gt; (예. #555555 )</description>
+		</var>
+		<var name="main_menu_font_size" type="text">
+			<title xml:lang="ko"> └─ 폰트 크기</title>
+			<description xml:lang="ko">메인 1차 메뉴 폰트 크기 설정. 메인 1차 메뉴 글자의 크기가 조절됩니다. 설정하지 않으면 12px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="main_menu_font_weight" type="select">
+			<title xml:lang="ko"> └─ 폰트 굵기</title>
+			<description xml:lang="ko">메인 1차 메뉴 폰트를 볼드체와 라이트체 중에서 선택하세요. 기본값은 '볼드체' 입니다.</description>
+			<options value="bold">
+				<title xml:lang="ko">볼드체 (기본)</title>
+			</options>
+			<options value="light">
+				<title xml:lang="ko">라이트체</title>
+			</options>
+		</var>
+		<var name="main_menu_font_paddingT" type="text">
+			<title xml:lang="ko"> └─ 위쪽 여백</title>
+			<description xml:lang="ko">메인 1차 메뉴 위쪽 여백 설정. 메인 1차 메뉴의 위쪽 여백이 조절됩니다. 설정하지 않으면 12px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="main_menu_font_paddingR" type="text">
+			<title xml:lang="ko"> └─ 좌우 여백</title>
+			<description xml:lang="ko">메인 1차 메뉴 좌우 여백 설정. 메인 1차 메뉴의 간격이 조절됩니다. 설정하지 않으면 각각 8px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="main_2menu" type="select">
+			<title xml:lang="ko">2_2. 메인 2차 메뉴 표시</title>
+			<description xml:lang="ko">메인 2차 메뉴 표시 여부를 선택해 주세요. '표시안함 1'은 2차 메뉴 리스트를 표시하지 않습니다. '표시안함 2'는 2차 메뉴가 표시되는 영역 전부를 표시하지 않습니다. 드롭다운 메뉴를 선택했을 경우에 유용합니다. 기본값은 '표시' 입니다.</description>
+			<options value="Y">
+				<title xml:lang="ko">표시 (기본)</title>
+			</options>
+			<options value="N1">
+				<title xml:lang="ko">표시 안함 1 </title>
+			</options>
+			<options value="N2">
+				<title xml:lang="ko">표시 안함 2</title>
+			</options>
+		</var>
+		<var name="main_2menu_font_color" type="text">
+			<title xml:lang="ko"> └─ 폰트 색상</title>
+			<description xml:lang="ko">메인 2차 메뉴 폰트 색상 설정. 원하는 글자색의 rgb 색상코드를 입력하세요. 입력하지 않으면 기본 글자색이 적용됩니다. &lt;a href="javascript:void(window.open('colortable.html','','width=600,height=400,scrollbars=yes'))"&gt;색상코드표확인&lt;/a&gt; (예. #555555 )</description>
+		</var>
+		<var name="main_2menu_font_size" type="text">
+			<title xml:lang="ko"> └─ 폰트 크기</title>
+			<description xml:lang="ko">메인 2차 메뉴 폰트 크기 설정. 메인 2차 메뉴 글자의 크기가 조절됩니다. 설정하지 않으면 12px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="side_menu_type" type="select">
+			<title xml:lang="ko">2_3. 사이드 메뉴 방식</title>
+			<description xml:lang="ko">원하시는 사이드 메뉴 방식을 선택해 주세요. '트리메뉴(tree menu)'와 '세로메뉴(vertNavigator)'를 사용하기 위해서는 '메뉴 출력기(네비게이터)' 위젯을 먼저 설치하셔야 합니다. '1 depth'은 최상단부터 전부를 출력하고, '2 depth'은 선택된 상위 메뉴가 있으면 출력하게 됩니다. '사용안함'을 선택하면 사이드 메뉴가 표시되지 않습니다.</description>
+			<options value="1">
+				<title xml:lang="ko">기본 메뉴 (기본)</title>
+			</options>
+			<options value="2">
+				<title xml:lang="ko">트리 메뉴 1 (1 depth)</title>
+			</options>
+			<options value="3">
+				<title xml:lang="ko">트리 메뉴 2 (2 depth)</title>
+			</options>
+			<options value="4">
+				<title xml:lang="ko">세로 메뉴 1 (1 depth)</title>
+			</options>
+			<options value="5">
+				<title xml:lang="ko">세로 메뉴 2 (2 depth)</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">사용 안함</title>
+			</options>
+		</var>
+		<var name="tree_menu_number" type="text">
+			<title xml:lang="ko"> └─ 메뉴 고유번호</title>
+			<description xml:lang="ko">'트리메뉴(tree menu)'와 '세로메뉴(vertNavigator)'에 사용할 메뉴의 고유번호를 입력하세요. 입력하지 않으면 호출된 레이아웃의 첫번째 메뉴가 자동으로 지정됩니다. 고유번호는 '메뉴 출력기' 위젯을 실행해서 코드생성을 하시면 알 수 있습니다. 예) menu_srl="72" 라면 72가 선택한 메뉴의 고유번호입니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="side_menu_font" type="text">
+			<title xml:lang="ko"> └─ 사이드 메뉴 폰트 변경</title>
+			<description xml:lang="ko">사이드 메뉴에 사용할 폰트를 입력하세요. 입력하지 않으면 기본 폰트가 적용됩니다. 예) NanumGothic</description>
+		</var>
+		<var name="slide_menu" type="textarea">
+			<title xml:lang="ko">2_4. 슬라이드 메뉴</title>
+			<description xml:lang="ko">슬라이드 메뉴에 표시될 내용을 입력해 주세요. 오른쪽 사이드 바 바깥쪽에 돌출되게 표시됩니다. 바로가기 메뉴, 이미지, 배너위젯 등 코드를 삽입해서 사용할 수 있습니다.(가로 80px) 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="logo_image" type="image">
+			<title xml:lang="ko">3. 로고 이미지</title>
+			<description xml:lang="ko">레이아웃의 상단에 표시될 로고 이미지를 등록해 주세요. 등록하지 않으면 기본로고가 노출됩니다. 기본로고의 노출도 원하지 않으면 blank 이미지를 등록해 주세요.</description>
+		</var>
+		<var name="index_url" type="text">
+			<title xml:lang="ko"> └─ 홈 페이지 URL</title>
+			<description xml:lang="ko">로고를 클릭시 이동할 홈 페이지 URL을 입력해 주세요. 예) http://xdomplus.com/</description>
+		</var>
+		<var name="site_name" type="text">
+			<title xml:lang="ko"> └─ 사이트 제목</title>
+			<description xml:lang="ko">로고 ALT에 표시됩니다.</description>
+		</var>
+		<var name="head_logo_left" type="text">
+			<title xml:lang="ko"> └─ Left 위치</title>
+			<description xml:lang="ko">로고 이미지 Left 위치 설정. 설정하지 않으면 0px로 적용됩니다. 로고의 크기에 따라서 위치를 잡아줘야 하는 경우가 있을 때 설정하세요. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="head_logo_top" type="text">
+			<title xml:lang="ko"> └─ Top 위치</title>
+			<description xml:lang="ko">로고 이미지 Top 위치 설정. 설정하지 않으면 0px로 적용됩니다. 로고의 크기에 따라서 위치를 잡아줘야 하는 경우가 있을 때 설정하세요. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="top_left" type="textarea">
+			<title xml:lang="ko">4. 상단 메뉴 왼쪽</title>
+			<description xml:lang="ko">상단 메뉴 왼쪽에 표시되는 영역의 내용을 입력해 주세요. HTML 또는 위젯코드를 삽입해서 사용할 수 있습니다. 입력하지 않으면 표시되지 않습니다. '13_1 상단 메뉴 표시'의 선택에 따라갑니다.</description>
+		</var>
+		<var name="head_ad_1" type="textarea">
+			<title xml:lang="ko">5_1. [광고]검색상단</title>
+			<description xml:lang="ko">메인 검색창 상단에 표시되는 영역의 내용을 입력해 주세요. 네이버스타일 메인용과 회사소개스타일을 제외한 모든 형태에서 표시됩니다. HTML 또는 위젯코드를 삽입해서 사용할 수 있습니다. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="head_ad_1_left" type="text">
+			<title xml:lang="ko"> └─ Left 위치</title>
+			<description xml:lang="ko">[광고]검색상단 Left 위치 설정. 설정하지 않으면 형태별 기본값이 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="head_ad_1_top" type="text">
+			<title xml:lang="ko"> └─ Top 위치</title>
+			<description xml:lang="ko">[광고]검색상단 Top 위치 설정. 설정하지 않으면 형태별 기본값이 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="head_ad_2" type="textarea">
+			<title xml:lang="ko">5_2. [광고]검색하단</title>
+			<description xml:lang="ko">[메인용]... 메인 검색창 하단에 표시되는 영역의 내용을 입력해 주세요. 레이아웃을 메인용으로 사용시에만 적용이 됩니다. 다음스타일과 회사소개스타일은 표시되지 않습니다. HTML 또는 위젯코드를 삽입해서 사용할 수 있습니다. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="head_ad_2_left" type="text">
+			<title xml:lang="ko"> └─ Left 위치</title>
+			<description xml:lang="ko">[광고]검색하단 Left 위치 설정. 설정하지 않으면 250~286px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="head_ad_2_top" type="text">
+			<title xml:lang="ko"> └─ Top 위치</title>
+			<description xml:lang="ko">[광고]검색하단 Top 위치 설정. 설정하지 않으면 64~78px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="head_ad_3" type="textarea">
+			<title xml:lang="ko">5_3. [광고]헤더 오른쪽</title>
+			<description xml:lang="ko">로고 이미지 오른쪽 위치에 표시되는 영역의 내용을 입력해 주세요. 메인용은 검색창 오른쪽 여백에 맞도록 크기를 조절해주세요. HTML 또는 위젯코드를 삽입해서 사용할 수 있습니다. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="head_ad_3_top" type="text">
+			<title xml:lang="ko"> └─ Top 위치</title>
+			<description xml:lang="ko">[광고]헤더 오른쪽 Top 위치 설정. 설정하지 않으면 메인용 레이아웃은 18~40px, 기타 레이아웃은 0px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="head_ad_3_right" type="text">
+			<title xml:lang="ko"> └─ Right 위치</title>
+			<description xml:lang="ko">[광고]헤더 오른쪽 Right 위치 설정. 설정하지 않으면 0px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="head_ad_4" type="textarea">
+			<title xml:lang="ko">5_4. [광고]메뉴바 하단</title>
+			<description xml:lang="ko">메뉴바 하단 위치에 표시되는 영역의 내용을 입력해 주세요. HTML 또는 위젯코드를 삽입해서 사용할 수 있습니다. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="head_ad_4_left" type="text">
+			<title xml:lang="ko"> └─ Left 위치</title>
+			<description xml:lang="ko">[광고]메뉴바 하단 Left 위치 설정. 설정하지 않으면 15px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="head_ad_4_top" type="text">
+			<title xml:lang="ko"> └─ Top 위치</title>
+			<description xml:lang="ko">[광고]메뉴바 하단 Top 위치 설정. 설정하지 않으면 45px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="head_ad_5" type="textarea">
+			<title xml:lang="ko">5_5. [광고]메뉴바 오른쪽</title>
+			<description xml:lang="ko">메뉴바 오른쪽 위치에 표시되는 영역의 내용을 입력해 주세요. HTML 또는 위젯코드를 삽입해서 사용할 수 있습니다. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="head_ad_5_top" type="text">
+			<title xml:lang="ko"> └─ Top 위치</title>
+			<description xml:lang="ko">[광고]메뉴바 오른쪽 Top 위치 설정. 설정하지 않으면 12px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="head_ad_5_right" type="text">
+			<title xml:lang="ko"> └─ Right 위치</title>
+			<description xml:lang="ko">[광고]메뉴바 오른쪽 Right 위치 설정. 설정하지 않으면 10px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="adLayer" type="textarea">
+			<title xml:lang="ko">5_6. [광고]로그인 창</title>
+			<description xml:lang="ko">팝업 로그인 창 오른쪽 위치에 표시되는 영역의 내용을 입력해 주세요. 가로 250px 세로 250px. HTML 또는 위젯코드를 삽입해서 사용할 수 있습니다. 입력하지 않으면 기본 광고가 노출됩니다.</description>
+		</var>
+		<var name="main_bannerLeft" type="textarea">
+			<title xml:lang="ko">6-1. 왼쪽 배너</title>
+			<description xml:lang="ko">왼쪽 사이드 바 바깥쪽에 돌출되게 표시됩니다. 가로가 75px 정도인 이미지, 배너위젯 등 코드를 입력할 수 있습니다. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="main_bannerLeft_left" type="text">
+			<title xml:lang="ko"> └─ Left 위치</title>
+			<description xml:lang="ko">왼쪽 배너 Left 위치 설정. 설정하지 않으면 -80px로 적용됩니다. 입력시 - 부호와 숫자만 입력하세요.</description>
+		</var>
+		<var name="main_bannerLeft_top" type="text">
+			<title xml:lang="ko"> └─ Top 위치</title>
+			<description xml:lang="ko">왼쪽 배너 Top 위치 설정. 설정하지 않으면 0px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="main_bannerRight" type="textarea">
+			<title xml:lang="ko">6-2. 오른쪽 배너</title>
+			<description xml:lang="ko">오른쪽 사이드 바 바깥쪽에 돌출되게 표시됩니다. 가로가 75px 정도인 이미지, 배너위젯 등 코드를 입력할 수 있습니다. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="main_bannerRight_top" type="text">
+			<title xml:lang="ko"> └─ Top 위치</title>
+			<description xml:lang="ko">오른쪽 배너 Top 위치 설정. 설정하지 않으면 0px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="main_bannerRight_right" type="text">
+			<title xml:lang="ko"> └─ Right 위치</title>
+			<description xml:lang="ko">오른쪽 배너 Right 위치 설정. 설정하지 않으면 -80px로 적용됩니다. 입력시 - 부호와 숫자만 입력하세요.</description>
+		</var>
+		<var name="plus_top" type="textarea">
+			<title xml:lang="ko">7-1. 사이드 메뉴 상단</title>
+			<description xml:lang="ko">표시위치 : 메인용 - 사이드메뉴 상단(200px,220px,250px,280px); 2단 - 오른쪽 사이드메뉴 상단(200px); 2단-A - 오른쪽 사이드메뉴 상단(250px); 2단-B - 오른쪽 사이드메뉴 상단(350px); 2단-C - 왼쪽 사이드메뉴 상단(120px); 3단 - 왼쪽 사이드메뉴 상단(120px); 3단-A - 왼쪽 사이드메뉴 상단(150px); 3단-B - 왼쪽 사이드메뉴 상단(100px); 검색용 - 오른쪽 사이드메뉴 상단(175px); 구글 광고나 이미지, 배너위젯 등 코드를 입력할 수 있습니다. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="plus" type="textarea">
+			<title xml:lang="ko">7-2. 사이드 메뉴 하단</title>
+			<description xml:lang="ko">표시위치 : 메인용 - 사이드메뉴 하단(200px,220px,250px,280px); 2단 - 오른쪽 사이드메뉴 하단(200px); 2단-A - 오른쪽 사이드메뉴 하단(250px); 2단-B - 오른쪽 사이드메뉴 하단(350px); 2단-C - 왼쪽 사이드메뉴 하단(120px); 3단 - 왼쪽 사이드메뉴 하단(120px); 3단-A - 왼쪽 사이드메뉴 하단(150px); 3단-B - 왼쪽 사이드메뉴 하단(100px); 검색용 - 오른쪽 사이드메뉴 하단(175px); 구글 광고나 이미지, 배너위젯 등 코드를 입력할 수 있습니다. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="content_Body_top" type="textarea">
+			<title xml:lang="ko">8_1. content_Body 상단</title>
+			<description xml:lang="ko">레이아웃 형태에 상관없이 content_Body 상단에 1단으로 표시됩니다. 1단과 2,3단과의 혼합형태가 필요할 때 사용하세요. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="content_top" type="textarea">
+			<title xml:lang="ko">8_2. content 상단</title>
+			<description xml:lang="ko">게시판 상단이나 페이지 상단에 표시됩니다. 구글 광고나 이미지, 현재위치 위젯 등 코드를 입력할 수 있습니다. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="content_Body_bottom" type="textarea">
+			<title xml:lang="ko">8_3. content_Body 하단</title>
+			<description xml:lang="ko">레이아웃 형태에 상관없이 content_Body 하단에 1단으로 표시됩니다. 1단과 2,3단과의 혼합형태가 필요할 때 사용하세요. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="contentSide" type="textarea">
+			<title xml:lang="ko">9. 오른쪽 꾸미기 (3단용)</title>
+			<description xml:lang="ko">[3단, 3단-A, 3단-B]... 3단은 가로가 250px, 3단-A는 가로가 200px, 3단-B는 가로가 280px인 구글 광고나 이미지, 배너위젯 등 코드를 입력할 수 있습니다. 입력하지 않으면 구글 광고가 출력됩니다.</description>
+		</var>
+		<var name="footer_copyright" type="textarea">
+			<title xml:lang="ko">10. Copyright</title>
+			<description xml:lang="ko">예) Copyright © 2010 엑스돔 플러스. All Rights Reserved. HTML 태그도 사용할 수 있습니다. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="footer_address" type="text">
+			<title xml:lang="ko">11. E-MAIL</title>
+			<description xml:lang="ko">예) amosinfo@sbcglobal.net 메일 주소를 입력하세요. 메일주소를 입력하시면 자동으로 해당 메일로 링크가 됩니다. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="background_image" type="image">
+			<title xml:lang="ko">12_1. Body 배경 이미지</title>
+			<description xml:lang="ko">Body 배경 이미지를 사용하시려면 등록해 주세요. 등록하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="body_repeat" type="select">
+			<title xml:lang="ko"> └─ 반복형식</title>
+			<description xml:lang="ko">Body 배경 이미지의 반복형식을 선택하세요. 기본값은 '반복' 입니다.</description>
+			<options value="repeat">
+				<title xml:lang="ko">반복 (기본)</title>
+			</options>
+			<options value="no-repeat">
+				<title xml:lang="ko">고정</title>
+			</options>
+			<options value="repeat-x">
+				<title xml:lang="ko">가로반복</title>
+			</options>
+			<options value="repeat-y">
+				<title xml:lang="ko">세로반복</title>
+			</options>
+		</var>
+		<var name="body_array" type="select">
+			<title xml:lang="ko"> └─ 정렬위치</title>
+			<description xml:lang="ko">Body 배경 이미지의 정렬위치를 선택하세요. 기본값은 '가운데' 입니다.</description>
+			<options value="center">
+				<title xml:lang="ko">가운데 (기본)</title>
+			</options>
+			<options value="left">
+				<title xml:lang="ko">왼쪽</title>
+			</options>
+			<options value="right">
+				<title xml:lang="ko">오른쪽</title>
+			</options>
+		</var>
+		<var name="body_bg_color" type="text">
+			<title xml:lang="ko"> └─ Body 배경색</title>
+			<description xml:lang="ko">Body 배경색 설정. Body 배경색의 rgb 색상코드를 입력하세요. Body 배경 이미지 등록과 상관없이 작동합니다. 등록하지않으면 흰색이 출력됩니다. (예. #dedede )</description>
+		</var>
+		<var name="bodyWrap_image" type="image">
+			<title xml:lang="ko">12_2. 메인 Body 배경 이미지</title>
+			<description xml:lang="ko">메인 Body (헤더에서 Footer까지) 배경 이미지를 사용하시려면 등록해 주세요. 등록하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="bodyWrap_repeat" type="select">
+			<title xml:lang="ko"> └─ 반복형식</title>
+			<description xml:lang="ko">메인 Body 배경 이미지의 반복형식을 선택하세요. 기본값은 '반복' 입니다.</description>
+			<options value="repeat">
+				<title xml:lang="ko">반복 (기본)</title>
+			</options>
+			<options value="no-repeat">
+				<title xml:lang="ko">고정</title>
+			</options>
+			<options value="repeat-x">
+				<title xml:lang="ko">가로반복</title>
+			</options>
+			<options value="repeat-y">
+				<title xml:lang="ko">세로반복</title>
+			</options>
+		</var>
+		<var name="bodyWrap_array" type="select">
+			<title xml:lang="ko"> └─ 정렬위치</title>
+			<description xml:lang="ko">메인 Body 배경 이미지의 정렬위치를 선택하세요. 기본값은 '가운데' 입니다.</description>
+			<options value="center">
+				<title xml:lang="ko">가운데 (기본)</title>
+			</options>
+			<options value="left">
+				<title xml:lang="ko">왼쪽</title>
+			</options>
+			<options value="right">
+				<title xml:lang="ko">오른쪽</title>
+			</options>
+		</var>
+		<var name="header_image" type="image">
+			<title xml:lang="ko">12_3. 헤더 배경 이미지</title>
+			<description xml:lang="ko">헤더 배경 이미지를 사용하시려면 등록해 주세요. 등록하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="header_repeat" type="select">
+			<title xml:lang="ko"> └─ 반복형식</title>
+			<description xml:lang="ko">헤더 배경 이미지의 반복형식을 선택하세요. 기본값은 '반복' 입니다.</description>
+			<options value="repeat">
+				<title xml:lang="ko">반복 (기본)</title>
+			</options>
+			<options value="no-repeat">
+				<title xml:lang="ko">고정</title>
+			</options>
+			<options value="repeat-x">
+				<title xml:lang="ko">가로반복</title>
+			</options>
+			<options value="repeat-y">
+				<title xml:lang="ko">세로반복</title>
+			</options>
+		</var>
+		<var name="header_array" type="select">
+			<title xml:lang="ko"> └─ 정렬위치</title>
+			<description xml:lang="ko">헤더 배경 이미지의 정렬위치를 선택하세요. 기본값은 '가운데' 입니다.</description>
+			<options value="center">
+				<title xml:lang="ko">가운데 (기본)</title>
+			</options>
+			<options value="left">
+				<title xml:lang="ko">왼쪽</title>
+			</options>
+			<options value="right">
+				<title xml:lang="ko">오른쪽</title>
+			</options>
+		</var>
+		<var name="header_image_height" type="text">
+			<title xml:lang="ko"> └─ 헤더 높이</title>
+			<description xml:lang="ko">헤더 높이 설정. 배경 이미지나 배경 플래시의 크기에 맞게 높이를 조절할 필요가 있을 때 설정하세요. 헤더 배경 이미지 등록과 상관없이 작동합니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="header_flash" type="textarea">
+			<title xml:lang="ko">12_4. 헤더 배경 플래시</title>
+			<description xml:lang="ko">헤더 배경에 이미지 대신 플래시를 사용하시려면 플래시를 포함한 코드 일체를 입력해 주세요. 메인용은 가로 880px (엑스돔 스타일은 980px), 그외는 가로 980px 입니다. 헤더 높이는 위 항목에서 설정하세요. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="footer_image" type="image">
+			<title xml:lang="ko">12_5. Footer 배경 이미지</title>
+			<description xml:lang="ko">Footer 배경 이미지를 사용하시려면 등록해 주세요. 등록하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="footer_repeat" type="select">
+			<title xml:lang="ko"> └─ 반복형식</title>
+			<description xml:lang="ko">Footer 배경 이미지의 반복형식을 선택하세요. 기본값은 '반복' 입니다.</description>
+			<options value="repeat">
+				<title xml:lang="ko">반복 (기본)</title>
+			</options>
+			<options value="no-repeat">
+				<title xml:lang="ko">고정</title>
+			</options>
+			<options value="repeat-x">
+				<title xml:lang="ko">가로반복</title>
+			</options>
+			<options value="repeat-y">
+				<title xml:lang="ko">세로반복</title>
+			</options>
+		</var>
+		<var name="footer_array" type="select">
+			<title xml:lang="ko"> └─ 정렬위치</title>
+			<description xml:lang="ko">Footer 배경 이미지의 정렬위치를 선택하세요. 기본값은 '가운데' 입니다.</description>
+			<options value="center">
+				<title xml:lang="ko">가운데 (기본)</title>
+			</options>
+			<options value="left">
+				<title xml:lang="ko">왼쪽</title>
+			</options>
+			<options value="right">
+				<title xml:lang="ko">오른쪽</title>
+			</options>
+		</var>
+		<var name="footer_image_height" type="text">
+			<title xml:lang="ko"> └─ Footer 높이</title>
+			<description xml:lang="ko">Footer 높이 설정. 배경 이미지나 Text 크기에 맞게 높이를 조절할 필요가 있을 때 설정하세요. Footer 배경 이미지 등록과 상관없이 작동합니다. 설정하지 않으면 75px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="topmenu" type="select">
+			<title xml:lang="ko">13_1. 상단 메뉴 표시</title>
+			<description xml:lang="ko">상단 메뉴 표시 여부를 선택하세요. 최상단에 표시됩니다. '메뉴만 표시'는 로그인 부분을 제외한 메뉴 부분만을 표시합니다. 기본값은 '표시' 입니다.</description>
+			<options value="Y">
+				<title xml:lang="ko">표시 (기본)</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">표시 안함</title>
+			</options>
+		</var>
+		<var name="gSearch_s" type="select">
+			<title xml:lang="ko">13_2. 메인 검색창 표시</title>
+			<description xml:lang="ko">메인 검색창 표시 여부를 선택하세요. 구글검색, XE검색, XE/구글검색, 표시안함 중에서 선택하세요. 로고 오른쪽에 표시됩니다. 기본값은 '구글검색' 입니다. (XE/구글검색을 사용하기 위해서는 '통합 검색 엑스돔 스킨'을 먼저 설치하셔야 합니다.)</description>
+			<options value="1">
+				<title xml:lang="ko">구글 검색 (기본)</title>
+			</options>
+			<options value="2">
+				<title xml:lang="ko">XE 검색</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">표시 안함</title>
+			</options>
+		</var>
+		<var name="gSearch_s_top" type="text">
+			<title xml:lang="ko"> └─ Top 위치</title>
+			<description xml:lang="ko">메인 검색창 Top 위치 설정. 설정하지 않으면 형태별 기본값이 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="gSearch_s_left" type="text">
+			<title xml:lang="ko"> └─ Left 위치</title>
+			<description xml:lang="ko">메인 검색창 Left 위치 설정. 설정하지 않으면 형태별 기본값이 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="select_lang" type="select">
+			<title xml:lang="ko">13_3. 언어선택 표시</title>
+			<description xml:lang="ko">언어선택 표시 여부를 선택하세요. 상단 메뉴에 추가된 고정형과 헤더 오른쪽에 표시되는 이동형, 표시안함 중에서 선택하세요. 기본값은 '표시 안함' 입니다. (이동형은 한개의 언어로만 서비스 하는 경우에는 선택해도 표시되지 않습니다.)</description>
+			<options value="N">
+				<title xml:lang="ko">표시 안함 (기본)</title>
+			</options>
+			<options value="1">
+				<title xml:lang="ko">상단 고정형</title>
+			</options>
+			<options value="2">
+				<title xml:lang="ko">이동형</title>
+			</options>
+		</var>
+		<var name="select_lang_top" type="text">
+			<title xml:lang="ko"> └─ 이동형 Top 위치</title>
+			<description xml:lang="ko">이동형 언어선택 Top 위치 설정. 설정하지 않으면 0px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="select_lang_right" type="text">
+			<title xml:lang="ko"> └─ 이동형 Right 위치</title>
+			<description xml:lang="ko">이동형 언어선택 Right 위치 설정. 설정하지 않으면 0px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="isSearch_s" type="select">
+			<title xml:lang="ko">13_4. 오른쪽 검색창 표시</title>
+			<description xml:lang="ko">오른쪽 검색창 표시 여부를 선택하세요. 구글검색, XE검색, XE/구글검색, 표시안함 중에서 선택하세요. 오른쪽 메뉴바 하단에 표시됩니다. 기본값은 'XE 검색' 입니다. (XE/구글검색을 사용하기 위해서는 '통합 검색 엑스돔 스킨'을 먼저 설치하셔야 합니다.)</description>
+			<options value="1">
+				<title xml:lang="ko">XE 검색 (기본)</title>
+			</options>
+			<options value="2">
+				<title xml:lang="ko">구글 검색</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">표시 안함</title>
+			</options>
+		</var>
+		<var name="isSearch_s_width" type="text">
+			<title xml:lang="ko"> └─ 가로 길이</title>
+			<description xml:lang="ko">오른쪽 검색창 가로 길이 설정. 설정하지 않으면 형태별 기본값이 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="isSearch_s_top" type="text">
+			<title xml:lang="ko"> └─ Top 위치</title>
+			<description xml:lang="ko">오른쪽 검색창 Top 위치 설정. 설정하지 않으면 40px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="isSearch_s_right" type="text">
+			<title xml:lang="ko"> └─ Right 위치</title>
+			<description xml:lang="ko">오른쪽 검색창 Right 위치 설정. 설정하지 않으면 0px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="login_i" type="select">
+			<title xml:lang="ko">13_5. 로그인 정보 표시</title>
+			<description xml:lang="ko">[메인용, 2단-우, 2단-좌, 2단-A, 3단-A, 검색용]... 로그인 정보 표시 여부를 선택하세요. 좌측 또는 우측에 표시됩니다. 기본값은 '표시' 입니다.</description>
+			<options value="Y">
+				<title xml:lang="ko">표시 (기본)</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">표시 안함</title>
+			</options>
+			<options value="outer">
+				<title xml:lang="ko">외부 로그인</title>
+			</options>
+			</var>
+		<var name="login_i_outer" type="textarea">
+			<title xml:lang="ko"> └─ 외부 로그인</title>
+			<description xml:lang="ko">엑스돔 로그인이 아닌 외부 로그인을 사용하고 싶다면 해당 로그인의 위젯 스킨을 설치하신 후에 '코드생성'을 해서 입력해 주세요. 반드시 레이아웃 형태별로 가로 크기를 확인하신 후에 사용하세요. 입력하지 않으면 표시되지 않습니다.</description>
+		</var>
+		<var name="quick_go" type="select">
+			<title xml:lang="ko">13_6. 퀵 메뉴 표시</title>
+			<description xml:lang="ko">퀵 메뉴 표시 여부를 선택하세요. 사이드 메뉴 바로 위에 표시됩니다. 기본값은 '표시 안함' 입니다.</description>
+			<options value="N">
+				<title xml:lang="ko">표시 안함 (기본)</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">표시</title>
+			</options>
+		</var>
+		<var name="quick_width" type="text">
+			<title xml:lang="ko"> └─ 메뉴 가로 길이</title>
+			<description xml:lang="ko">퀵 메뉴 가로 길이 설정. 메뉴 가로 길이가 조절됩니다. 설정하지 않으면 형태에 따라 48px~61px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="quick_paddingR" type="text">
+			<title xml:lang="ko"> └─ padding 오른쪽 여백</title>
+			<description xml:lang="ko">퀵 메뉴 padding 오른쪽 여백 설정. 메뉴 간격이 조절됩니다. 설정하지 않으면 형태에 따라 5px~6px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="svc_map" type="select">
+			<title xml:lang="ko">13_7. 서비스 전체보기 표시</title>
+			<description xml:lang="ko">서비스 전체보기 표시 여부를 선택하세요. 표시, 사이트맵, 표시안함 중에서 선택하세요. Footer 바로 위에 표시됩니다. 기본값은 '표시' 입니다.</description>
+			<options value="Y">
+				<title xml:lang="ko">표시 (기본)</title>
+			</options>
+			<options value="S">
+				<title xml:lang="ko">사이트맵</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">표시 안함</title>
+			</options>
+		</var>
+		<var name="sitemap_width" type="text">
+			<title xml:lang="ko"> └─ 메뉴 가로 길이</title>
+			<description xml:lang="ko">사이트맵 메뉴 가로 길이 설정. 메뉴 가로 길이가 조절됩니다. 설정하지 않으면 105px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="sitemap_paddingR" type="text">
+			<title xml:lang="ko"> └─ padding 오른쪽 여백</title>
+			<description xml:lang="ko">사이트맵 메뉴 padding 오른쪽 여백 설정. 메뉴 간격이 조절됩니다. 설정하지 않으면 15px로 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="family_site" type="select">
+			<title xml:lang="ko">13_8. 패밀리 사이트 표시</title>
+			<description xml:lang="ko">패밀리 사이트 표시 여부를 선택하세요. 오른쪽 하단에 표시됩니다. 기본값은 '표시 안함' 입니다.</description>
+			<options value="N">
+				<title xml:lang="ko">표시 안함 (기본)</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">표시</title>
+			</options>
+		</var>
+		<var name="slide_updown" type="select">
+			<title xml:lang="ko">13_9. 위/아래 이동 버튼 표시</title>
+			<description xml:lang="ko">위/아래 이동 버튼 표시 여부를 선택하세요. 메인 메뉴 오른쪽에 돌출되어 표시됩니다. 기본값은 '표시 안함' 입니다.</description>
+			<options value="N">
+				<title xml:lang="ko">표시 안함 (기본)</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">표시</title>
+			</options>
+		</var>
+		<var name="new_icon" type="select">
+			<title xml:lang="ko">14_1. new 아이콘 표시</title>
+			<description xml:lang="ko">new 아이콘 표시 여부를 선택하세요. 메인메뉴 위에 표시됩니다. 기본값은 '표시 안함' 입니다.</description>
+			<options value="N">
+				<title xml:lang="ko">표시 안함 (기본)</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">표시</title>
+			</options>
+		</var>
+		<var name="new_icon_left" type="text">
+			<title xml:lang="ko"> └─ Left 위치</title>
+			<description xml:lang="ko">new 아이콘 Left 위치 설정. 설정하지 않으면 기본값이 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="hot_icon" type="select">
+			<title xml:lang="ko">14_2. hot 아이콘 표시</title>
+			<description xml:lang="ko">hot 아이콘 표시 여부를 선택하세요. 메인메뉴 위에 표시됩니다. 기본값은 '표시 안함' 입니다.</description>
+			<options value="N">
+				<title xml:lang="ko">표시 안함 (기본)</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">표시</title>
+			</options>
+		</var>
+		<var name="hot_icon_left" type="text">
+			<title xml:lang="ko"> └─ Left 위치</title>
+			<description xml:lang="ko">hot 아이콘 Left 위치 설정. 설정하지 않으면 기본값이 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+		<var name="up_icon" type="select">
+			<title xml:lang="ko">14_3. up 아이콘 표시</title>
+			<description xml:lang="ko">up 아이콘 표시 여부를 선택하세요. 메인메뉴 위에 표시됩니다. 기본값은 '표시 안함' 입니다.</description>
+			<options value="N">
+				<title xml:lang="ko">표시 안함 (기본)</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">표시</title>
+			</options>
+			</var>
+		<var name="up_icon_left" type="text">
+			<title xml:lang="ko"> └─ Left 위치</title>
+			<description xml:lang="ko">up 아이콘 Left 위치 설정. 설정하지 않으면 기본값이 적용됩니다. 입력시 숫자만 입력하세요.</description>
+		</var>
+	</extra_vars>
+	<menus>
+		<menu name="top_menu" maxdepth="1">
+			<title xml:lang="ko">상단 메뉴</title>
+		</menu>
+		<menu name="main_menu" maxdepth="4" default="true">
+			<title xml:lang="ko">메인 메뉴</title>
+		</menu>
+		<menu name="bottom_menu" maxdepth="1">
+			<title xml:lang="ko">하단 메뉴</title>
+		</menu>
+		<menu name="quick_menu" maxdepth="4">
+			<title xml:lang="ko">퀵 메뉴</title>
+		</menu>
+		<menu name="svc_menu" maxdepth="1">
+			<title xml:lang="ko">서비스링크 메뉴</title>
+		</menu>
+		<menu name="sitemap_menu" maxdepth="4">
+			<title xml:lang="ko">사이트맵 메뉴</title>
+		</menu>
+		<menu name="family_menu" maxdepth="1">
+			<title xml:lang="ko">패밀리사이트 메뉴</title>
+		</menu>
+		<menu name="banner_menu" maxdepth="1">
+			<title xml:lang="ko">배너 메뉴</title>
+		</menu>
+	</menus>
+</layout>
