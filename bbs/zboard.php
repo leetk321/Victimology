@@ -1,1 +1,0 @@
-<? header("Location:http://www.victimology.or.kr"); exit; ?>
